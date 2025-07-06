@@ -47,6 +47,7 @@ import { useContext, useEffect, useState } from "react";
 import AssignmentSubmissionPage from "./school/components/students/AssignmentSubmissionPage";
 import AssignTeacherPage from "./school/components/teachers/AssignTeacherPage";
 import { NoticeProvider } from "./context/NoticeContext";
+import AIPage from "./components/AIPage.jsx";
 function App() {
   const { authenticated, login, themeDark } = useContext(AuthContext);
 
@@ -56,8 +57,7 @@ function App() {
         <ThemeToggleButton />
         <BrowserRouter>
           <Routes>
-            
-          <Route path="school"  element={<School/>}>
+            <Route path="school" element={<School />}>
               <Route index element={<SchoolDashboard />} />
               <Route path="class" element={<Class />} />
               <Route path="class-details" element={<ClassDetails />} />
@@ -69,30 +69,30 @@ function App() {
               <Route path="attendance" element={<StudentAttendanceList />} />
               <Route path="attendance-student/:studentId" element={<AttendanceDetails />} />
               <Route path="examinations" element={<Examinations />} />
-              <Route path="notice" element={<NoticeSchool/>} />
+              <Route path="notice" element={<NoticeSchool />} />
             </Route>
-  
-            <Route path="student"  element={<Student/>}>
-              <Route index element={<StudentDetails />}/>
+
+            <Route path="student" element={<Student />}>
+              <Route index element={<StudentDetails />} />
               <Route path="student-details" element={<StudentDetails />} />
               <Route path="examinations" element={<StudentExaminations />} />
-              <Route path='periods' element={<ScheduleStudent/>} />
+              <Route path="periods" element={<ScheduleStudent />} />
               <Route path="attendance" element={<AttendanceStudent />} />
-              <Route path="notice" element={<NoticeStudent/>} />
+              <Route path="notice" element={<NoticeStudent />} />
               <Route path="submit-assignment" element={<AssignmentSubmissionPage />} />
             </Route>
-  
-            <Route path="teacher"  element={<Teacher/>}>
-              <Route index element={<TeacherDetails />}/>
+
+            <Route path="teacher" element={<Teacher />}>
+              <Route index element={<TeacherDetails />} />
               <Route path="details" element={<TeacherDetails />} />
               <Route path="examinations" element={<TeacherExaminations />} />
               <Route path="periods" element={<TeacherSchedule />} />
               {/* <Route path='sub-teach' element={<StudentSubjectTeacher/>} /> */}
               <Route path="attendance" element={<AttendanceTeacher />} />
-              <Route path="notice" element={<NoticeTeacher/>} />
+              <Route path="notice" element={<NoticeTeacher />} />
               <Route path="assign-teacher" element={<AssignTeacherPage />} />
             </Route>
-   
+            <Route path="/ai" element={<AIPage />} />
             <Route path="/" element={<Client />}>
               <Route index element={<Home />} />
               <Route path="home" element={<Home />} />
@@ -107,6 +107,5 @@ function App() {
     </NoticeProvider>
   );
 }
-
 
 export default App;

@@ -116,22 +116,26 @@ function Navbar() {
 
             
 
-             {!authenticated && <><MenuItem onClick={handleCloseNavMenu}>
-                <Button className='button-beautify button-beautify-one' onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', }} >
-                  <Box sx={{ display: 'flex', flexDirection: 'row' }} className="button-box">
-                    Register
-                  </Box>
-                </Button>
-              </MenuItem>
-              
+             {!authenticated && <>
               <MenuItem onClick={handleCloseNavMenu}>
-              <Button className='button-beautify button-beautify-one' onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', }} >
-                <Box sx={{ display: 'flex', flexDirection: 'row' }} className="button-box">
-                <LoginIcon sx={{ marginRight: "5px" }} />
-                 Login
-                </Box>
-              </Button>
-            </MenuItem>
+                <Link to="/register" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
+                  <Button className='button-beautify button-beautify-one' sx={{ my: 2, color: 'white', width: '100%' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row' }} className="button-box">
+                      Register
+                    </Box>
+                  </Button>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link to="/login" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
+                  <Button className='button-beautify button-beautify-one' sx={{ my: 2, color: 'white', width: '100%' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row' }} className="button-box">
+                      <LoginIcon sx={{ marginRight: "5px" }} />
+                      Login
+                    </Box>
+                  </Button>
+                </Link>
+              </MenuItem>
             </>
               }
              

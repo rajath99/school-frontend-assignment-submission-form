@@ -74,21 +74,21 @@ const resetMessage  =()=>{
         }
     })
 
-    return (<Box component={'div'} sx={{width:"100%", minHeight:"80vh", background:"url(https://cdn.pixabay.com/photo/2017/08/12/21/42/back2school-2635456_1280.png)", backgroundSize:"cover"}}>
+    return (<Box component={'div'} sx={{background:"url(https://cdn.pixabay.com/photo/2017/08/12/21/42/back2school-2635456_1280.png)", backgroundSize:"cover", minHeight:'100vh', p: { xs: 2, sm: 4 }, maxWidth: { xs: '100%', sm: 400, md: 500 }, width: '100%', margin: 'auto'}}>
 
-<Box component={'div'} sx={{padding:'40px',maxWidth:"700px",margin:"auto"}} > 
+<Box component={'div'} sx={{p: 0, maxWidth: '100%', width: '100%', margin: 'auto'}} > 
     {message && <CustomizedSnackbars reset={resetMessage} type={type} message={message}/>}
-        <Box sx={{ display: 'flex', justifyContent: "center", alignItems: "center", }} component={'div'}>
-            <Typography variant="h3">Register School</Typography>
-        </Box>
-        <Paper  sx={{ padding: "20px", margin: "10px",minWidth:'320px' }}>
-            <Box
-                component="form"
-                noValidate
-                autoComplete="off"
-                onSubmit={Formik.handleSubmit}
+    <Box sx={{ display: 'flex', justifyContent: "center", alignItems: "center" }} component={'div'}>
+        <Typography variant="h3" sx={{ fontSize: { xs: '1.2rem', sm: '1.7rem', md: '2.2rem' }, fontWeight: 700 }}>Register School</Typography>
+    </Box>
+    <Paper sx={{ p: { xs: 2, sm: 3 }, m: { xs: 1, sm: 2 }, width: '100%' }}>
+        <Box
+            component="form"
+            noValidate
+            autoComplete="off"
+            onSubmit={Formik.handleSubmit}
 
-            >
+        >
 
                 <Box component={'div'} sx={{display:"flex", flexDirection:"row",
                     flexWrap:"wrap", alignItems:"center"}}>

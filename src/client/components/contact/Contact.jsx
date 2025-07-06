@@ -1,6 +1,8 @@
 import { Box, Button, Paper, TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
 import { descriptionSchema } from "../../../yupSchema/contactSchema";
+import Chatbot from '../home/Chatbot';
+import axios from 'axios';
 
 import ("./Contact.css")
 export default function Contact() {
@@ -21,11 +23,13 @@ export default function Contact() {
 
     return (<>
 
-<Box component={'div'} sx={{background:"black",padding:'40px'}}> 
-        <Box sx={{ display: 'flex', justifyContent: "center", alignItems: "center", background: "black" }} component={'div'}>
-            <Typography className="text-beautify hero-text">Contact</Typography>
+<Box component={'div'} sx={{background:"purple", p: { xs: 2, sm: 4 }, maxWidth: { xs: '100%', sm: 400, md: 500 }, width: '100%', margin: 'auto'}}>
+        <Box sx={{ display: 'flex', justifyContent: "center", alignItems: "center", background: "purple" }} component={'div'}>
+            <Typography className="text-beautify hero-text" sx={{ fontSize: { xs: '1.2rem', sm: '1.7rem', md: '2.2rem' }, fontWeight: 700 }}>
+                Contact
+            </Typography>
         </Box>
-        <Paper className="container-form-paper" sx={{ padding: "20px", margin: "10px" }}>
+        <Paper className="container-form-paper" sx={{ p: { xs: 2, sm: 3 }, m: { xs: 1, sm: 2 }, width: '100%', boxShadow: 3, transition: 'none', '&:hover': { boxShadow: 3 } }}>
             <Box
                 component="form"
                 noValidate
@@ -61,6 +65,10 @@ export default function Contact() {
                 </Box>
             </Box>
         </Paper>
+        {/* AI Chatbot Section */}
+        <Box sx={{ mt: 4 }}>
+            <Chatbot />
         </Box>
+    </Box>
     </>)
 }
